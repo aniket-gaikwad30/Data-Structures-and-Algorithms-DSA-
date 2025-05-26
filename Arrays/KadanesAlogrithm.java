@@ -1,7 +1,7 @@
 public class KadanesAlogrithm {
 
     public static int findMaxSubArray(int nums[]){
-        int currSum = 0, maxSum = Interger.MIN_VALUE;
+        int currSum = 0, maxSum = Integer.MIN_VALUE;
 
         
 
