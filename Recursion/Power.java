@@ -1,11 +1,9 @@
 public class Power {
     
     public double myPow(double x, int n) {
-
         if(n==0){
             return 1;
         }
-
         int halfPower = (int) (myPow(x,n/2) * myPow(x,n/2));
 
         if(n%2==1){
@@ -13,8 +11,7 @@ public class Power {
         }
 
         return halfPower;
-        //THIS IS THE RETURN STATEMENT ..
-        // THIS ITS HE AKLSO HEHE
+        
         
     }
     public static void main(String[] args) {
