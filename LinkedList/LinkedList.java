@@ -162,6 +162,48 @@ public class LinkedList {
         temp.next = temp.next.next;
     }
 
+    public boolean isLoop(){
+        Node slow = head;
+        Node fast = head;
+        while(fast.next!=null && fast.next.next!=null){
+            slow = slow.next;
+            fast = fast.next.next;
+            if(slow == fast){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public Node middle(){
+        Node slow = head;
+        Node fast = head;
+        while(fast.next!=null && fast.next.next!=null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+
+    public boolean isPalindrome(){
+        if(head==null || head.next==null){
+            return true;
+        }
+        Node mid = middle();
+        Node temp = mid.next;
+        mid.next = null;
+        reverse();
+        Node head2 = head;
+        while(temp!=null){
+            if(head2.data != temp.data){
+                return false;
+            }
+            head2 = head2.next;
+            temp = temp.next;
+        }
+        return true;
+    }
+
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
 
