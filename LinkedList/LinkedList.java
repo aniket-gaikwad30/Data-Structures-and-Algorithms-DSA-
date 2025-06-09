@@ -280,7 +280,40 @@ public class LinkedList {
 
         return dummy.next;
     }
-    
+    public void zigZag(){
+        //step 1 find mid;
+
+        Node slow = head;
+        Node fast = head.next;
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        Node mid = slow;
+        //step 2 reverse the second half
+        Node prev = null;
+        Node curr = mid.next;
+        Node next = null;
+        while(curr != null){
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        mid.next = prev;
+        //step 3 merge
+        Node left = head;
+        Node right = mid.next;
+        mid.next = null;
+        while(left != null && right != null){
+            Node leftNext = left.next;
+            Node rightNext = right.next;
+            left.next = right;
+            right.next = leftNext;
+            left = leftNext;
+            right = rightNext;
+        }
+    }
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
         Node n1 = ll.new Node(1);
