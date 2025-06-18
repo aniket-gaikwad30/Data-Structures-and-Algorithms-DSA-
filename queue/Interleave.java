@@ -1,4 +1,5 @@
-import java.util.*;
+import java.util.Queue;
+import java.util.LinkedList;
 
 public class Interleave {
 
@@ -8,7 +9,7 @@ public class Interleave {
             return;
         }
 
-        Queue<Integer> first = new LinkedList<>();
+        Queue<Integer> first = new java.util.LinkedList<Integer>();
         int size = q.size();
 
         // Step 1: Push first half elements into 'first'
