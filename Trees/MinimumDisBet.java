@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class MinimumDistanceBet {
+public class MinimumDisBet {
 
     static class Node {
         int data;
